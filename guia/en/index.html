@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inema-mods — 18 ready-made mods for Claude Code</title>
+<meta name="description" content="INEMA kit of Claude Code mods: handbrake, collision guard, context weather, session receipt and 14 more ready-made accessories, with Portuguese names, installed in 2 commands.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/inema-mods/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/inema-mods/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/inema-mods/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🧩</span> inema-mods</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">What it is</a>
+    <a class="sec" href="#fluxo">How it works</a>
+    <a class="sec" href="#mods">The 18 mods</a>
+    <a class="sec" href="#guia">User guide</a>
+    <a class="sec" href="#criar">Build your own</a>
+    <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/inema-mods" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Mods kit for Claude Code · Portuguese names</span>
+      <h1>Ready-made accessories for your <span class="amb">Claude Code</span></h1>
+      <p class="lead">18 mods you install in 2 commands: a handbrake before files get deleted, a warning when another session changed the same file, the "weather" of your context, a receipt of what was created and more. None of them spends credits.</p>
+      <div class="cta">
+        <a class="btn" href="#guia">Start the guide</a>
+        <a class="btn ghost" href="https://github.com/inematds/inema-mods" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-en.jpg" alt="Banner: Claude Code mods, 18 ready-made accessories"></figure>
+  </div>
+</header>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">What it is</span>
+  <h2>Claude Code comes from the factory. The mod is the accessory.</h2>
+  <p class="sub">Like in a car: the basics come ready, and you can add (and remove) whatever you like without touching the engine. A mod is a piece of code that steps into the middle of what Claude Code does: it shows something on screen, asks before a dangerous action, or swaps the action for a safer one.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="The featured mods: handbrake, collision guard, context weather, session receipt, API watchdog and recording mode" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>🛡️ Protects before the damage</h3><p>The handbrake (freio-de-mao) measures what an <code>rm -rf</code> would delete before it runs. The collision guard (guarda-colisao) warns you when another session changed the file. The API watchdog (vigia-api) asks before spending on a paid service.</p></div>
+    <div class="card"><h3>📊 Shows what was hidden</h3><p>How much of the context is already used, what Claude created in this session, turn by turn with model and tokens, and every action explained in plain language.</p></div>
+    <div class="card"><h3>🧩 Ready and honest</h3><p>Every mod has tests, a README with its limits and options in <code>/config</code>. None of them calls the model, the internet or a paid service. And there is a panic button to switch everything off.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">How it works</span>
+  <h2>Prompt, skill, hook and mod: what is the difference?</h2>
+  <p class="sub">All four live together. The mod is the only one that draws on the screen and accepts commands, and it does not spend credits either.</p>
+  <div class="grid g4">
+    <div class="card"><h3>Prompt</h3><p>What you ask for right now. "Summarize these notes."</p></div>
+    <div class="card"><h3>Skill</h3><p>A way of doing a task, saved so you can repeat it. The model reads it and follows it.</p></div>
+    <div class="card"><h3>Hook</h3><p>A doorman at the right moment: lets things through or blocks them. No model, no credits.</p></div>
+    <div class="card"><h3>Mod</h3><p>Code that steps into the middle: draws a band or panel, asks a question, swaps the action, accepts <code>/commands</code>.</p></div>
+  </div>
+  <p class="sub" style="margin-top:28px">A mod can act at four moments. Example with "delete the build folder":</p>
+  <div class="flow">
+    <span>Before: shows the 41 files and asks</span><span class="arr">→</span>
+    <span>Instead: sends it to the trash</span><span class="arr">→</span>
+    <span>After: tells you what was deleted</span><span class="arr">→</span>
+    <span>Around: backup first, so you can undo</span>
+  </div>
+</div></section>
+
+<section id="mods"><div class="wrap">
+  <span class="chip">The 18 mods</span>
+  <h2>Pick the ones that make sense for you</h2>
+  <p class="sub">Start with the first three. Each one has a README with commands, options and limits in the <a href="https://github.com/inematds/inema-mods/tree/main/mods" target="_blank" rel="noopener">mods/ folder</a>. The names are in Portuguese; the meaning is given in parentheses.</p>
+  <h3 style="margin:18px 0 12px">Protection</h3>
+  <div class="grid g3">
+    <div class="card"><h3>freio-de-mao (handbrake)</h3><p>Before <code>rm -rf</code>, <code>git reset --hard</code>, <code>push --force</code>: measures the damage without deleting anything and asks Cancel / Trash / Back up and proceed / Proceed. <code>/freio</code></p></div>
+    <div class="card"><h3>guarda-colisao (collision guard)</h3><p>Before editing a file that another session changed, asks if it is OK. <code>/colisao</code></p></div>
+    <div class="card"><h3>vigia-api (API watchdog)</h3><p>Asks before using a paid service (image, video, APIs), with approval lasting 1 hour. <code>/vigia</code></p></div>
+    <div class="card"><h3>modo-gravacao (recording mode)</h3><p>For recording a video or live stream: hides emails, keys, amounts, tax IDs and phone numbers on screen. <code>/gravar on</code></p></div>
+    <div class="card"><h3>faixa-publicacao (publish banner)</h3><p>After <code>git push</code>, tells you where it was published and that the deploy is automatic.</p></div>
+  </div>
+  <h3 style="margin:26px 0 12px">Context and session</h3>
+  <div class="grid g3">
+    <div class="card"><h3>clima-contexto (context weather)</h3><p>A band with the context "weather": clear, cloudy, rain, storm. Usage limits and [compact] and [handoff] buttons. <code>/contexto</code></p></div>
+    <div class="card"><h3>linha-do-tempo (timeline)</h3><p>Turn-by-turn panel: model, tools, tokens and duration. <code>/timeline</code></p></div>
+    <div class="card"><h3>roteador-subagente (subagent router)</h3><p>Makes subagents run on a smaller model to save your quota. <code>/router on</code></p></div>
+    <div class="card"><h3>painel-longrun (long-run panel)</h3><p>Tracks a long execution: goal, time, checklist with %. <code>/longrun</code></p></div>
+  </div>
+  <h3 style="margin:26px 0 12px">Productivity</h3>
+  <div class="grid g3">
+    <div class="card"><h3>recibo-sessao (session receipt)</h3><p>"What did Claude create?" A list of created and edited files, with [open folder]. <code>/recibo</code></p></div>
+    <div class="card"><h3>proximos-passos (next steps)</h3><p>Turns the list of next steps in the answer into buttons. <code>/proximos</code></p></div>
+    <div class="card"><h3>marcador-sessao (session bookmark)</h3><p>Marks a point in the conversation with a summary, so you can resume later. <code>/marcar nome</code></p></div>
+    <div class="card"><h3>replay-edicoes (edit replay)</h3><p>Replays the session's edits step by step, with a diff. <code>/replay</code></p></div>
+    <div class="card"><h3>registrar-falha (log failure)</h3><p>After several errors in a row, offers to log the failure in FALHAS.md. <code>/falha</code></p></div>
+  </div>
+  <h3 style="margin:26px 0 12px">Learn and visual</h3>
+  <div class="grid g3">
+    <div class="card"><h3>tradutor-acoes (action translator)</h3><p>Explains each action in plain language ("Editing file X"), without hiding the real command. <code>/tradutor</code></p></div>
+    <div class="card"><h3>mapa-calor (heat map)</h3><p>A map of the project folders by count or size. <code>/mapa</code></p></div>
+    <div class="card"><h3>tema-inema (INEMA theme)</h3><p>A footer with brand, project and time, for live streams. <code>/tema on</code></p></div>
+    <div class="card"><h3>bichinho (little pet)</h3><p>A little pet that "eats" the files you read. Just for fun. <code>/bichinho on</code></p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Prerequisites</span>
+  <h2>Just an up-to-date Claude Code</h2>
+  <p class="sub">Tested on version 2.1.289, in the terminal and in the desktop app. The mods API is still in testing and may change between versions.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Update Claude Code</h3><p>Mods need a recent version.</p><pre><span class="k">claude update</span>
+<span class="k">claude --version</span>  <span class="c"># 2.1.289 or newer</span></pre></div>
+    <div class="card"><h3>Read before installing</h3><p>A mod runs with your user account. See what it does first:</p><pre><span class="k">claude plugin details freio-de-mao@inema-mods</span></pre></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">User guide · step by step</span>
+  <h2>From zero to your first mod in 2 minutes</h2>
+  <p class="sub">Commands for the terminal. Inside Claude Code, the same ones work with <code>/plugin</code>.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Add the kit</h3>
+    <p>Just once. This registers the INEMA mods "store".</p>
+<pre><span class="k">claude plugin marketplace add inematds/inema-mods</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Install a mod</h3>
+    <p>Start with the handbrake. To apply it only to the current project, add <code>--scope project</code>.</p>
+<pre><span class="k">claude plugin install freio-de-mao@inema-mods</span>
+<span class="k">claude plugin install guarda-colisao@inema-mods</span>
+<span class="k">claude plugin install clima-contexto@inema-mods</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Open a new session</h3>
+    <p>Or type <code>/reload-plugins</code> in the open session. Bands and panels show up after the first request.</p>
+<pre><span class="k">claude</span>  <span class="c"># new session, mods loaded</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Use the commands</h3>
+    <p>Each mod has a short command (in Portuguese).</p>
+<pre><span class="k">/recibo</span>          <span class="c"># what was created in this session</span>
+<span class="k">/contexto</span>        <span class="c"># turns the weather band on/off</span>
+<span class="k">/gravar on</span>       <span class="c"># before recording the screen</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Adjust it in /config</h3>
+    <p>Weather thresholds, list of dangerous commands, watched paid services: everything is in the options, no code editing.</p>
+<pre><span class="k">/config</span>  <span class="c"># look for the mod name</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Panic button</h3>
+    <p>Something odd? Switch everything off at once, or just the mods from this kit.</p>
+<pre><span class="k">claude plugin disable --all</span>
+<span class="k">bash scripts/mods-off.sh --inema</span>   <span class="c"># inside the cloned repo</span>
+<span class="k">bash scripts/mods-doctor.sh</span>         <span class="c"># which mods your version accepts</span></pre>
+  </div></div>
+</div></section>
+
+<section id="exemplos"><div class="wrap">
+  <span class="chip">Really tested</span>
+  <h2>What happened in the tests</h2>
+  <p class="sub">Besides 200+ automated tests (validation, types and behavior), the protection mods ran in a real Claude Code, with permissions opened up so that only the mod could stop the action.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Handbrake</h3><p>We asked Claude: "run <code>rm -rf .../sub</code>". The mod blocked it, measured 3 files, 1 folder and 6 bytes, and Claude stopped to ask. The files were still there.</p></div>
+    <div class="card"><h3>API watchdog</h3><p>A command that mentions a paid service was stopped before it ran, and the model asked for approval instead of carrying on.</p></div>
+  </div>
+</div></section>
+
+<section id="criar"><div class="wrap">
+  <span class="chip">Build your own</span>
+  <h2>The best mod is the one made for you</h2>
+  <p class="sub">Claude Code builds mods from a plain request: type <code>/plugin-authoring</code> and describe what you want. Ready-made prompts in the repo:</p>
+  <div class="grid g3">
+    <div class="card"><h3>1. Discover your own</h3><p>Claude reads your last 30 sessions and suggests 5 mods that fix what you repeat or get wrong. <a href="https://github.com/inematds/inema-mods/blob/main/prompts/01-auditoria-sugira-5-mods.md" target="_blank" rel="noopener">Prompt (in Portuguese)</a></p></div>
+    <div class="card"><h3>2. Context forecast</h3><p>Build from scratch the band with sun, cloud, rain and storm. <a href="https://github.com/inematds/inema-mods/blob/main/prompts/02-criar-mod-previsao-do-contexto.md" target="_blank" rel="noopener">Prompt (in Portuguese)</a></p></div>
+    <div class="card"><h3>3. Handbrake</h3><p>Build from scratch the mod that measures the damage before deleting. <a href="https://github.com/inematds/inema-mods/blob/main/prompts/03-criar-mod-freio-de-mao.md" target="_blank" rel="noopener">Prompt (in Portuguese)</a></p></div>
+  </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Limits and next steps</span>
+  <h2>What is not guaranteed yet</h2>
+  <p class="sub">Protection reduces risk, it does not guarantee safety. Each README says what the mod does not cover.</p>
+  <div class="phase"><div class="tag">Now</div><div class="d"><strong>18 mods tested (Claude Code 2.1.289)</strong><span>Validation, types and automated tests on all of them; handbrake and API watchdog tested live.</span></div></div>
+  <div class="phase"><div class="tag">Careful</div><div class="d"><strong>The mods API is in testing</strong><span>It may change between versions. After updating Claude Code, run <code>scripts/mods-doctor.sh</code>.</span></div></div>
+  <div class="phase"><div class="tag">Next</div><div class="d"><strong>Real use in the community</strong><span>Measure false positives of the collision guard and the handbrake, and tune how the bands and panels look on a real screen.</span></div></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Claude Code mods</div><div class="pill">TypeScript</div><div class="pill">18 mods · PT</div>
+    <p style="margin-top:18px">inema-mods · open and free content ·
+      <a href="https://github.com/inematds/inema-mods">github.com/inematds/inema-mods</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='inema-mods-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

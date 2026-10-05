@@ -1,5 +1,13 @@
 # inema-mods — Kit INEMA de mods do Claude Code
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
+[![inema-mods — Kit INEMA de mods do Claude Code](guia/assets/banner.jpg)](https://inematds.github.io/inema-mods/guia/)
+
+## 📖 Guia de uso
+
+Guia completo (landing + passo a passo): **https://inematds.github.io/inema-mods/guia/**
+
 **18 mods prontos, em português**, para o Claude Code: proteções contra estrago, um painel do contexto, recibo do que foi criado e outros. Cada mod é um acessório: você liga, usa e desliga quando quiser, sem mexer no motor.
 
 > **Mod** é um pedaço de código que entra no meio do que o Claude Code faz: mostra coisas na tela (faixa, painel, aviso), pergunta antes de uma ação perigosa ou troca a ação por outra mais segura. Não gasta crédito: nenhum mod deste kit chama o modelo, a internet ou serviço pago.
