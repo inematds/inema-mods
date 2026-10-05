@@ -1,0 +1,7 @@
+{
+  "name": "tradutor-acoes",
+  "version": "0.1.0",
+  "description": "Mostra em português simples o que o Claude está fazendo (lendo, editando, rodando comando...), mantendo o comando real logo abaixo (/tradutor on|off)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts"
+}

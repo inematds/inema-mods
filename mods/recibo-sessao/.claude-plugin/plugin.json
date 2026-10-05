@@ -1,0 +1,16 @@
+{
+  "name": "recibo-sessao",
+  "version": "0.1.0",
+  "description": "Recibo da sessão: lista o que o Claude criou ou alterou, com botão para abrir a pasta (/recibo, /recibo ultimo, /recibo limpar)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "abridor": {
+      "type": "string",
+      "title": "Programa que abre pastas",
+      "description": "xdg-open no Linux, open no Mac, explorer no Windows.",
+      "default": "xdg-open",
+      "options": ["xdg-open", "open", "explorer"]
+    }
+  }
+}

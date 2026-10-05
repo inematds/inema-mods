@@ -1,0 +1,7 @@
+{
+  "name": "bichinho",
+  "version": "0.1.0",
+  "description": "Bichinho ASCII acima do prompt que come os arquivos que o Claude lê, edita ou cria (/bichinho on|off)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "linha-do-tempo",
+  "version": "0.1.0",
+  "description": "Linha do tempo da sessão: turno a turno, modelo, esforço, ferramentas usadas, tokens e duração num painel (/timeline, /timeline exportar, /timeline limpar)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts"
+}

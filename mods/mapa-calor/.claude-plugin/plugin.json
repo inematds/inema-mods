@@ -1,0 +1,27 @@
+{
+  "name": "mapa-calor",
+  "version": "0.1.0",
+  "description": "Mapa de calor das pastas do projeto: quantos arquivos e quanto espaço cada pasta ocupa, com barra colorida (/mapa, /mapa bytes)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ignorar": {
+      "type": "string",
+      "title": "Pastas ignoradas",
+      "description": "Nomes separados por vírgula que o mapa não entra.",
+      "default": ".git,node_modules,.next,dist,build,venv,.venv,__pycache__"
+    },
+    "profundidade": {
+      "type": "number",
+      "title": "Profundidade máxima",
+      "description": "Quantos níveis de pasta o mapa desce (1 = só a primeira camada).",
+      "default": 3
+    },
+    "limite": {
+      "type": "number",
+      "title": "Máximo de arquivos lidos",
+      "description": "Para de contar depois deste número de arquivos e avisa.",
+      "default": 5000
+    }
+  }
+}

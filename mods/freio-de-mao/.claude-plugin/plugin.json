@@ -1,0 +1,23 @@
+{
+  "name": "freio-de-mao",
+  "version": "0.1.0",
+  "description": "Freio de mão: antes de um comando que apaga ou descarta (rm -rf, git reset --hard, git clean, push --force, pkill -f...), mede o estrago sem apagar e pergunta: prosseguir, lixeira, backup ou cancelar (/freio)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "sem_tela": {
+      "type": "string",
+      "title": "Sem tela para perguntar (claude -p, Esc)",
+      "description": "negar: barra o comando e explica ao modelo. permitir: deixa rodar.",
+      "default": "negar",
+      "options": ["negar", "permitir"]
+    },
+    "contas_git": {
+      "type": "string",
+      "multiple": true,
+      "title": "Contas do git (dono=email)",
+      "description": "Ex.: inematds=inematds@gmail.com. Se preenchido, em git commit/push confere o user.email contra o dono do remoto no GitHub.",
+      "default": []
+    }
+  }
+}

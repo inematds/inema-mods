@@ -1,0 +1,27 @@
+{
+  "name": "painel-longrun",
+  "version": "0.1.0",
+  "description": "Painel da execução longa: objetivo, tempo decorrido, checklist com % e as últimas linhas do progresso e do canal, atualizado sozinho (/longrun, /longrun todas)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "pasta": {
+      "type": "string",
+      "title": "Pasta fixa",
+      "description": "Deixe vazio para usar a execução mais recente em longrun/ da pasta do projeto. Pode ser a pasta da execução (com goal.md) ou a do projeto.",
+      "default": ""
+    },
+    "intervalo": {
+      "type": "number",
+      "title": "Atualizar a cada (segundos)",
+      "description": "De quanto em quanto tempo o painel relê os arquivos.",
+      "default": 30
+    },
+    "comoCriar": {
+      "type": "string",
+      "title": "Como criar uma execução longa",
+      "description": "Texto mostrado quando não há pasta longrun/ (o comando do seu kit).",
+      "default": "~/projetos/execucao-longa/tools/novo-longrun.sh <projeto> <slug>"
+    }
+  }
+}

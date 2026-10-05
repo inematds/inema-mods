@@ -1,0 +1,15 @@
+{
+  "name": "replay-edicoes",
+  "version": "0.1.0",
+  "description": "Replay das edições da sessão: passo a passo, cada Edit/Write com o diff, botões anterior/próximo e copiar (/replay)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "maxLinhas": {
+      "type": "number",
+      "title": "Linhas por passo",
+      "description": "Diff maior que isso é cortado no painel (o botão copiar leva o diff inteiro).",
+      "default": 40
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "roteador-subagente",
+  "version": "0.1.0",
+  "description": "Roteador de subagente: escolhe o modelo de cada subagente (Explore no haiku, general-purpose no sonnet...) sem mexer em modelo pedido explicitamente (/router on|off|sonnet|haiku|opus|status)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "mapa": {
+      "type": "string",
+      "title": "Mapa tipo=modelo",
+      "description": "Lista separada por vírgula: tipo de subagente = modelo (haiku, sonnet, opus ou um id completo). Vale com /router on.",
+      "default": "Explore=haiku, general-purpose=sonnet"
+    },
+    "mostrar_faixa": {
+      "type": "boolean",
+      "title": "Mostrar faixa acima do prompt",
+      "description": "Além da linha de status (router: sonnet), mostra uma faixa curta acima do prompt com um botão para desligar.",
+      "default": false
+    }
+  }
+}

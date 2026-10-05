@@ -1,0 +1,29 @@
+{
+  "name": "tema-inema",
+  "version": "0.1.0",
+  "description": "Identidade visual para lives: faixa 'INEMA.CLUB · projeto · hora' acima do prompt e destaque na cor da marca nas respostas (/tema on|off)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "texto": {
+      "type": "string",
+      "title": "Texto da marca",
+      "description": "O que aparece no começo da faixa acima do prompt.",
+      "default": "INEMA.CLUB"
+    },
+    "cor": {
+      "type": "string",
+      "title": "Cor da marca",
+      "description": "Cor da faixa e do destaque. ambar é o laranja-amarelado da INEMA.",
+      "default": "ambar",
+      "options": ["ambar", "amarelo", "ciano", "magenta", "verde", "azul"]
+    },
+    "destaque": {
+      "type": "string",
+      "title": "Destaque nas respostas do Claude",
+      "description": "linha: uma linha da marca no começo de cada resposta. moldura: borda colorida em volta de cada bloco (ocupa mais espaço). nenhum: só a faixa.",
+      "default": "linha",
+      "options": ["linha", "moldura", "nenhum"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "proximos-passos",
+  "version": "0.1.0",
+  "description": "Próximos passos: quando a resposta termina com uma lista curta de opções, mostra até 3 botões acima do prompt que já escrevem o pedido (/proximos). Não chama o modelo: só lê o texto",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ligado": {
+      "type": "boolean",
+      "title": "Mostrar sozinho depois de cada resposta",
+      "description": "Desligado, a faixa só aparece quando você digitar /proximos.",
+      "default": true
+    }
+  }
+}

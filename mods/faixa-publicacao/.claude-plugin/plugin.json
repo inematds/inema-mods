@@ -1,0 +1,15 @@
+{
+  "name": "faixa-publicacao",
+  "version": "0.1.0",
+  "description": "Faixa de publicação: depois de um git push que deu certo, avisa para onde foi e que o deploy (Vercel/Pages) é automático; alerta se o remoto não está na lista permitida",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "userConfig": {
+    "remotos_permitidos": {
+      "type": "string",
+      "multiple": true,
+      "title": "Remotos permitidos",
+      "description": "Nomes ou trechos de URL (ex.: origin, inematds/, NeiMaldaner/portal). Vazio = não confere.",
+      "default": []
+    }
+  }
+}

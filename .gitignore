@@ -1,0 +1,5 @@
+# tipos que o engine escreve ao carregar o mod (regenerados a cada versão)
+.claude-plugin/types/
+mods/*/.claude-plugin/types/
+node_modules/
+.DS_Store

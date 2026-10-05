@@ -1,0 +1,191 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "inema-mods",
+  "description": "Kit INEMA de mods do Claude Code: proteções, contexto e produtividade, em português",
+  "owner": {
+    "name": "INEMA",
+    "email": "inematds@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "bichinho",
+      "description": "Bichinho ASCII acima do prompt que come os arquivos que o Claude lê, edita ou cria (/bichinho on|off)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "visual",
+      "source": "./mods/bichinho"
+    },
+    {
+      "name": "clima-contexto",
+      "description": "Clima do contexto: faixa acima do prompt com o quanto do contexto já foi usado (limpo, nublado, chuva, tempestade), limites 5h/semana, custo equivalente e botões de compactar e handoff (/contexto, /handoff-agora)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "contexto",
+      "source": "./mods/clima-contexto"
+    },
+    {
+      "name": "faixa-publicacao",
+      "description": "Faixa de publicação: depois de um git push que deu certo, avisa para onde foi e que o deploy (Vercel/Pages) é automático; alerta se o remoto não está na lista permitida",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "seguranca",
+      "source": "./mods/faixa-publicacao"
+    },
+    {
+      "name": "freio-de-mao",
+      "description": "Freio de mão: antes de um comando que apaga ou descarta (rm -rf, git reset --hard, git clean, push --force, pkill -f...), mede o estrago sem apagar e pergunta: prosseguir, lixeira, backup ou cancelar (/freio)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "seguranca",
+      "source": "./mods/freio-de-mao"
+    },
+    {
+      "name": "guarda-colisao",
+      "description": "Guarda de colisão: antes de editar, avisa se o arquivo foi mudado fora desta sessão (outra sessão, você no editor, outro programa) e pergunta o que fazer (/colisao)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "seguranca",
+      "source": "./mods/guarda-colisao"
+    },
+    {
+      "name": "linha-do-tempo",
+      "description": "Linha do tempo da sessão: turno a turno, modelo, esforço, ferramentas usadas, tokens e duração num painel (/timeline, /timeline exportar, /timeline limpar)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "contexto",
+      "source": "./mods/linha-do-tempo"
+    },
+    {
+      "name": "mapa-calor",
+      "description": "Mapa de calor das pastas do projeto: quantos arquivos e quanto espaço cada pasta ocupa, com barra colorida (/mapa, /mapa bytes)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "aprendizado",
+      "source": "./mods/mapa-calor"
+    },
+    {
+      "name": "marcador-sessao",
+      "description": "Marcadores de sessão: guarda um ponto da conversa com nome e resumo, e cola o resumo no prompt para retomar (/marcar <nome>, /marcar abrir, /marcar apagar <nome>)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/marcador-sessao"
+    },
+    {
+      "name": "modo-gravacao",
+      "description": "Modo gravação para lives e vídeos: mascara na tela e-mails, tokens, IPs, telefones, CPF/CNPJ, valores e a pasta do usuário (/gravar on|off). Reduz o risco, não garante.",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "seguranca",
+      "source": "./mods/modo-gravacao"
+    },
+    {
+      "name": "painel-longrun",
+      "description": "Painel da execução longa: objetivo, tempo decorrido, checklist com % e as últimas linhas do progresso e do canal, atualizado sozinho (/longrun, /longrun todas)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/painel-longrun"
+    },
+    {
+      "name": "proximos-passos",
+      "description": "Próximos passos: quando a resposta termina com uma lista curta de opções, mostra até 3 botões acima do prompt que já escrevem o pedido (/proximos). Não chama o modelo: só lê o texto",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/proximos-passos"
+    },
+    {
+      "name": "recibo-sessao",
+      "description": "Recibo da sessão: lista o que o Claude criou ou alterou, com botão para abrir a pasta (/recibo, /recibo ultimo, /recibo limpar)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/recibo-sessao"
+    },
+    {
+      "name": "registrar-falha",
+      "description": "Quando comandos falham no turno, mostra botão que escreve no prompt o pedido de registrar a falha no FALHAS.md (/falha)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/registrar-falha"
+    },
+    {
+      "name": "replay-edicoes",
+      "description": "Replay das edições da sessão: passo a passo, cada Edit/Write com o diff, botões anterior/próximo e copiar (/replay)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "produtividade",
+      "source": "./mods/replay-edicoes"
+    },
+    {
+      "name": "roteador-subagente",
+      "description": "Roteador de subagente: escolhe o modelo de cada subagente (Explore no haiku, general-purpose no sonnet...) sem mexer em modelo pedido explicitamente (/router on|off|sonnet|haiku|opus|status)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "contexto",
+      "source": "./mods/roteador-subagente"
+    },
+    {
+      "name": "tema-inema",
+      "description": "Identidade visual para lives: faixa 'INEMA.CLUB · projeto · hora' acima do prompt e destaque na cor da marca nas respostas (/tema on|off)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "visual",
+      "source": "./mods/tema-inema"
+    },
+    {
+      "name": "tradutor-acoes",
+      "description": "Mostra em português simples o que o Claude está fazendo (lendo, editando, rodando comando...), mantendo o comando real logo abaixo (/tradutor on|off)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "aprendizado",
+      "source": "./mods/tradutor-acoes"
+    },
+    {
+      "name": "vigia-api",
+      "description": "Vigia de API paga: pergunta antes de ferramentas e comandos que gastam dinheiro ou créditos (Magnific, Kling, HeyGen, OpenRouter, Groq...), com autorização por 1 hora (/vigia, /vigia limpar)",
+      "version": "0.1.0",
+      "author": {
+        "name": "INEMA"
+      },
+      "category": "seguranca",
+      "source": "./mods/vigia-api"
+    }
+  ]
+}

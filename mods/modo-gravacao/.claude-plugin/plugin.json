@@ -1,0 +1,15 @@
+{
+  "name": "modo-gravacao",
+  "version": "0.1.0",
+  "description": "Modo gravação para lives e vídeos: mascara na tela e-mails, tokens, IPs, telefones, CPF/CNPJ, valores e a pasta do usuário (/gravar on|off). Reduz o risco, não garante.",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "extras": {
+      "type": "string",
+      "title": "Termos extras a mascarar",
+      "description": "Lista separada por vírgula. Texto comum é mascarado sem diferença de maiúsculas (ex.: nome do computador, do cliente). Entre barras vira expressão regular: /cliente-\\d+/i",
+      "default": ""
+    }
+  }
+}

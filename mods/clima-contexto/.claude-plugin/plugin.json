@@ -1,0 +1,33 @@
+{
+  "name": "clima-contexto",
+  "version": "0.1.0",
+  "description": "Clima do contexto: faixa acima do prompt com o quanto do contexto já foi usado (limpo, nublado, chuva, tempestade), limites 5h/semana, custo equivalente e botões de compactar e handoff (/contexto, /handoff-agora)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "limiares": {
+      "type": "string",
+      "title": "Limiares do clima (%)",
+      "description": "Três números separados por vírgula: onde começa nublado, chuva e tempestade. Padrão 50,70,85.",
+      "default": "50,70,85"
+    },
+    "cache_minutos": {
+      "type": "number",
+      "title": "Validade estimada do cache (minutos)",
+      "description": "Quanto tempo o cache de prompt costuma durar depois do último turno. É só uma estimativa.",
+      "default": 60
+    },
+    "auto_handoff": {
+      "type": "boolean",
+      "title": "Handoff automático",
+      "description": "Ao passar do limiar de handoff, roda /session-handoff uma vez e deixa /clear escrito no prompt (nunca executa /clear sozinho).",
+      "default": false
+    },
+    "limiar_handoff": {
+      "type": "number",
+      "title": "Limiar do handoff automático (%)",
+      "description": "Uso do contexto que dispara o handoff automático (só vale com o handoff automático ligado).",
+      "default": 85
+    }
+  }
+}

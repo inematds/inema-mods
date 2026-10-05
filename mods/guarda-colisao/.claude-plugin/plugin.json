@@ -1,0 +1,23 @@
+{
+  "name": "guarda-colisao",
+  "version": "0.1.0",
+  "description": "Guarda de colisão: antes de editar, avisa se o arquivo foi mudado fora desta sessão (outra sessão, você no editor, outro programa) e pergunta o que fazer (/colisao)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "sem_tela": {
+      "type": "string",
+      "title": "Sem tela para perguntar (claude -p, Esc)",
+      "description": "avisar: recusa a edição e manda o modelo reler o arquivo. permitir: deixa editar.",
+      "default": "avisar",
+      "options": ["avisar", "permitir"]
+    },
+    "ignorar": {
+      "type": "string",
+      "multiple": true,
+      "title": "Caminhos ignorados",
+      "description": "Trechos de caminho que não são vigiados. *.ext casa a extensão.",
+      "default": ["node_modules/", ".git/", "dist/", "build/", ".next/", "*.lock"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "registrar-falha",
+  "version": "0.1.0",
+  "description": "Quando comandos falham no turno, mostra botão que escreve no prompt o pedido de registrar a falha no FALHAS.md (/falha)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "erros_minimos": {
+      "type": "number",
+      "title": "Erros para mostrar a faixa",
+      "description": "Quantos comandos com erro no mesmo turno fazem a faixa aparecer.",
+      "default": 2
+    }
+  }
+}

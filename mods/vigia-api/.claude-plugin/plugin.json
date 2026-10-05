@@ -1,0 +1,39 @@
+{
+  "name": "vigia-api",
+  "version": "0.1.0",
+  "description": "Vigia de API paga: pergunta antes de ferramentas e comandos que gastam dinheiro ou créditos (Magnific, Kling, HeyGen, OpenRouter, Groq...), com autorização por 1 hora (/vigia, /vigia limpar)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "userConfig": {
+    "ferramentas_pagas": {
+      "type": "string",
+      "multiple": true,
+      "title": "Ferramentas pagas (MCP)",
+      "description": "Nomes de ferramenta; * = qualquer trecho. Ex.: mcp__klingai__*",
+      "default": [
+        "mcp__magnific__images_generate",
+        "mcp__magnific__video_*",
+        "mcp__magnific__audio_*",
+        "mcp__klingai__*",
+        "mcp__metricool__create*",
+        "mcp__*heygen*"
+      ]
+    },
+    "comandos_pagos": {
+      "type": "string",
+      "multiple": true,
+      "title": "Comandos pagos (Bash)",
+      "description": "Trechos ou expressões regulares procurados no comando, sem diferenciar maiúsculas.",
+      "default": [
+        "openrouter",
+        "api.openai.com",
+        "groq",
+        "heygen",
+        "elevenlabs",
+        "kling ",
+        "replicate",
+        "fal.ai",
+        "codex exec .*image"
+      ]
+    }
+  }
+}

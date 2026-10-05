@@ -1,0 +1,15 @@
+{
+  "name": "marcador-sessao",
+  "version": "0.1.0",
+  "description": "Marcadores de sessão: guarda um ponto da conversa com nome e resumo, e cola o resumo no prompt para retomar (/marcar <nome>, /marcar abrir, /marcar apagar <nome>)",
+  "author": { "name": "INEMA", "email": "inematds@gmail.com" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "tamanhoResumo": {
+      "type": "number",
+      "title": "Tamanho do resumo",
+      "description": "Quantas letras da última resposta do Claude o marcador guarda.",
+      "default": 200
+    }
+  }
+}
