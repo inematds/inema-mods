@@ -81,6 +81,7 @@ bash scripts/mods-doctor.sh         # tells you which mods your version still ac
 
 The best mod is the one made for the way you work. Ready-made prompts to copy and paste in [prompts/](prompts) (written in Portuguese):
 
+0. [Interview me and tell me which mods to turn on](prompts/00-descubra-seu-mod.md) (in Portuguese): up to 8 questions, a score for each mod (this kit and others) and your top 3 with a first step.
 1. [Discover the 5 mods you need](prompts/01-auditoria-sugira-5-mods.md): Claude reads your recent sessions and suggests them.
 2. [Build the "context forecast"](prompts/02-criar-mod-previsao-do-contexto.md).
 3. [Build the "handbrake"](prompts/03-criar-mod-freio-de-mao.md).

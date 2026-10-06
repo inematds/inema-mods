@@ -81,6 +81,7 @@ bash scripts/mods-doctor.sh         # dice qué mods acepta todavía tu versión
 
 El mejor mod es el hecho a tu manera de trabajar. Prompts listos para copiar y pegar en [prompts/](prompts) (en portugués):
 
+0. [Entrevístame y dime qué mods activar](prompts/00-descubra-seu-mod.md) (en portugués): hasta 8 preguntas, una nota para cada mod (de este kit y de otros) y tu top 3 con el primer paso.
 1. [Descubre los 5 mods que necesitas](prompts/01-auditoria-sugira-5-mods.md): Claude lee tus últimas sesiones y sugiere.
 2. [Crea la "previsión del contexto"](prompts/02-criar-mod-previsao-do-contexto.md).
 3. [Crea el "freno de mano"](prompts/03-criar-mod-freio-de-mao.md).
